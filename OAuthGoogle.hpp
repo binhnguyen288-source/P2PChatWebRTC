@@ -5,12 +5,11 @@
 #include "json.hpp"
 #include "util/TLSClient.hpp"
 #include "HTTPUtil.hpp"
-// const std::string clientSecret = "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";
 // const std::string clientID = "958163678615-99m4jfkf1tih867va4qougkk19ek98qq.apps.googleusercontent.com";
 
 const std::string googleAuthURL = "https://accounts.google.com/o/oauth2/v2/auth?client_id=958163678615-99m4jfkf1tih867va4qougkk19ek98qq.apps.googleusercontent.com&prompt=select_account&redirect_uri=https%3A%2F%2Fverbal.ddns.net%2Flogin%2Fcallback&response_type=code&scope=profile email";
 const std::string googleRedirectDomain = "oauth2.googleapis.com";
-const std::string googleRedirectQuery = "client_id=958163678615-99m4jfkf1tih867va4qougkk19ek98qq.apps.googleusercontent.com&client_secret=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&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fverbal.ddns.net%2Flogin%2Fcallback";
+const std::string googleRedirectQuery = "client_id=958163678615-99m4jfkf1tih867va4qougkk19ek98qq.apps.googleusercontent.com&client_secret=<nope>&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fverbal.ddns.net%2Flogin%2Fcallback";
 
 
 std::string contactGoogleOAuth(std::string const& code) {
