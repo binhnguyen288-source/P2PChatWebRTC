@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App chat</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- <link rel="icon" type="image/icon" href="image/logo.png"> -->
+</head>
+<body>
+    <div id="videoWindow" style="display: none; place-items: center; min-width: 100%; min-height: 100%;">
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <video id="localVideo" style="border: 1px solid black; max-width: 45%; margin-left: 1rem; margin-right: 1rem;" autoplay playsinline muted></video>
+            <video id="remoteVideo" style="border: 1px solid black; max-width: 45%; margin-left: 1rem; margin-right: 1rem;" autoplay playsinline></video>
+        </div>
+    </div>
+    <div class="container" id="chatWindow" style="display: inherit;">
+        <div class = "leftSide">
+            <!-- header -->
+            <div class="header">
+                <div class="userimg">
+                    <img class="cover" id="profilePicture">
+                </div>
+                <div class="c1"> 
+                    <label><strong>My Email</strong></label>
+                    <br>
+                    <input type="text" id="my-id" class="myID" disabled>
+                </div>
+            </div>
+
+            <!-- search -->
+            <div class="search_chat">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Input your friend's email here" id="f-email" class="fID">
+                <button id="addBtn" class="connect" onclick="addFriend()">Add</button>
+            </div>
+            
+            <!-- chat list -->
+            <div class="chatlist"></div>
+        </div>
+
+        <div class = "rightSide">
+            <div class="header">
+                <div class="imgText">
+                    <div class="userimg">
+                        <img class="cover" id="otherProfilePicture">
+                    </div>
+                    <h4 id="otherFullname"></h4>
+                </div>
+            
+                <ul class="nav_icons">
+                    <li><ion-icon name="videocam-outline" onclick="startVideoCall()"></ion-icon></li>
+                    <li><ion-icon name="search-outline"></ion-icon></li>
+                    <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                </ul>
+            </div>
+
+            <!-- Chat box -->
+            
+            
+            <div class="chatBox">
+                
+            </div>
+            
+            
+            
+
+            <!-- Chat input -->
+            <div class="chatbox_input">
+                <ion-icon name="happy-outline"></ion-icon>
+                <input type="file" id="upload" hidden oninput="sendFile(this)">
+                <ion-icon name="attach-outline" onclick="document.getElementById('upload').click()"></ion-icon>
+                <input type="text" placeholder="Type a message" id="message">
+                <ion-icon name="send-outline" id="send"></ion-icon>
+                
+
+            </div>
+        </div>
+        
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>    
+    <script src="/public/chat.js"></script>
+    <script src="/public/fileChannel.js"></script>
+
+</body>
+</html>
